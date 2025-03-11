@@ -1,0 +1,26 @@
+{
+  "name": "cypress-product-checker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoPhildeg/cypress-product-checker.git"
+  },
+  "keywords": [],
+  "author": "Leonardo Philippi Degering",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "14.1.0",
+    "dotenv": "16.4.7",
+    "prettier": "3.5.3",
+    "twilio": "5.5.0"
+  },
+  "devDependencies": {
+    "eslint": "9.22.0",
+    "eslint-plugin-cypress": "4.2.0"
+  }
+}
