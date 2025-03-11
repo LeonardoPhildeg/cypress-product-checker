@@ -1,0 +1,33 @@
+name: Check product availability
+
+on:
+  schedule:
+    - cron: '0 15 * * *' # Executa às 12:00 BRT (15:00 UTC)
+    - cron: '0 21 * * *' # Executa às 18:00 BRT (21:00 UTC)
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Criar arquivo .env
+        run: |
+          echo "USER=${{ secrets.USER }}" >> .env
+          echo "PASSWORD=${{ secrets.PASSWORD }}" >> .env
+          echo "TWILIO_ACCOUNT_SID=${{ secrets.TWILIO_ACCOUNT_SID }}" >> .env
+          echo "TWILIO_AUTH_TOKEN=${{ secrets.TWILIO_AUTH_TOKEN }}" >> .env
+          echo "TWILIO_WHATSAPP_FROM=${{ secrets.TWILIO_WHATSAPP_FROM }}" >> .env
+          echo "WHATSAPP_NUMBER=${{ secrets.WHATSAPP_NUMBER }}" >> .env
+
+      - name: Rodar Cypress
+        run: npm test
