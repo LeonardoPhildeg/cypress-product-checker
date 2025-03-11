@@ -4,7 +4,7 @@ require('dotenv').config()
 module.exports = defineConfig({
   e2e: {
     watchForFileChanges: false,
-    baseUrl: 'https://www.vanral.com.br',
+    baseUrl: process.env.BASE_URL,
     viewportWidth: 1920,
     viewportHeight: 1080,
     setupNodeEvents(on, config) {

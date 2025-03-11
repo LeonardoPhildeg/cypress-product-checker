@@ -30,6 +30,7 @@ jobs:
           echo "TWILIO_AUTH_TOKEN=${{ secrets.TWILIO_AUTH_TOKEN }}" >> .env
           echo "TWILIO_WHATSAPP_FROM=${{ secrets.TWILIO_WHATSAPP_FROM }}" >> .env
           echo "WHATSAPP_NUMBER=${{ secrets.WHATSAPP_NUMBER }}" >> .env
+          echo "BASE_URL=${{ secrets.BASE_URL }}" >> .env
 
       - name: Rodar Cypress
         run: npm test
