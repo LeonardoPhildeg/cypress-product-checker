@@ -5,6 +5,8 @@ on:
     - cron: '0 15 * * *' # Executa às 12:00 BRT (15:00 UTC)
     - cron: '0 21 * * *' # Executa às 18:00 BRT (21:00 UTC)
 
+  workflow_dispatch:
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
