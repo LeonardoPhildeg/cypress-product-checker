@@ -14,7 +14,7 @@ describe('Product checker', () => {
     cy.contains('Teclado Arranjador 61 Teclas PSR SX920 com Fonte Bivolt Yamaha').click()
 
     cy.url().should('include', 'teclado-arranjador-61-teclas-psr-sx920-com-fonte-bivolt-yamaha')
-    cy.contains('li', 'Indisponível').should('exist')
+    cy.contains('li', 'Indisponível').should('not.exist')
   })
 
   after(function () {
